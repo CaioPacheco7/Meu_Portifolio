@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -15,6 +15,16 @@ export function Navbar() {
   const t = useTranslations("nav");
   const { isScrolled } = useScrollDirection();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // with the menu open the page behind it must not scroll
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -34,7 +44,7 @@ export function Navbar() {
               <a
                 key={link.key}
                 href={link.href}
-                className="text-sm text-fg-muted transition-colors hover:text-fg"
+                className="-my-3 py-3 text-sm text-fg-muted transition-colors hover:text-fg"
               >
                 {t(link.key)}
               </a>
@@ -48,8 +58,9 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsMenuOpen((open) => !open)}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="text-fg md:hidden"
+            aria-label={isMenuOpen ? t("menuClose") : t("menuOpen")}
+            aria-expanded={isMenuOpen}
+            className="-mr-3 flex size-11 items-center justify-center text-fg md:hidden"
           >
             {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>

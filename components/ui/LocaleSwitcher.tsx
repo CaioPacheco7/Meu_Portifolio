@@ -13,9 +13,9 @@ export function LocaleSwitcher({ className }: { className?: string }) {
   const router = useRouter();
 
   return (
-    <div className={cn("flex items-center gap-2 text-sm", className)}>
+    <div className={cn("-mx-2 flex items-center text-sm", className)}>
       {routing.locales.map((loc, index) => (
-        <span key={loc} className="flex items-center gap-2">
+        <span key={loc} className="flex items-center">
           {index > 0 && <span className="text-fg-muted">|</span>}
           <button
             type="button"
@@ -28,7 +28,7 @@ export function LocaleSwitcher({ className }: { className?: string }) {
               )
             }
             className={cn(
-              "uppercase tracking-wide transition-colors",
+              "-my-3 px-2 py-3 uppercase tracking-wide transition-colors",
               loc === locale
                 ? "text-fg"
                 : "text-fg-muted hover:text-fg",

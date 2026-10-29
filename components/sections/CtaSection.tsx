@@ -2,12 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import { RevealText } from "@/components/ui/RevealText";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SocialLinks } from "@/components/ui/SocialLinks";
-import { whatsappLink } from "@/lib/constants";
 
 export function CtaSection() {
   const t = useTranslations("cta");
@@ -15,7 +13,7 @@ export function CtaSection() {
   return (
     <section
       id="contato"
-      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden py-30"
+      className="relative flex min-h-[80vh] items-center justify-center overflow-hidden py-20 md:py-30"
     >
       <div
         aria-hidden
@@ -34,13 +32,9 @@ export function CtaSection() {
           {t("title")}
         </RevealText>
 
-        <div className="mt-12">
-          <Button href={whatsappLink(t("whatsappMessage"))}>{t("button")}</Button>
-        </div>
-
         <ContactForm />
 
-        <RevealOnScroll className="mt-24" delay={0.1}>
+        <RevealOnScroll className="mt-20 md:mt-24" delay={0.1}>
           <p className="mb-6 text-xs uppercase tracking-[0.3em] text-fg-muted">
             {t("social")}
           </p>

@@ -65,13 +65,13 @@ export function CredentialsStrip() {
         </Marquee>
       </div>
 
-      <p className="mt-4 text-xs text-fg-muted">
+      <p className="mt-4 text-sm text-fg-muted sm:text-xs">
         {t("onRequest")}{" "}
         <a
           href={whatsappLink(t("requestMessage"))}
           target="_blank"
           rel="noreferrer"
-          className="text-fg underline decoration-accent underline-offset-4 transition-colors hover:text-accent"
+          className="-my-3 inline-block py-3 text-fg underline decoration-accent underline-offset-4 transition-colors hover:text-accent"
         >
           {t("requestLink")}
         </a>

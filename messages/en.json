@@ -9,7 +9,9 @@
     "about": "About",
     "services": "Services",
     "process": "Process",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "hero": {
     "role": "Developer & Web Designer",
@@ -153,9 +155,7 @@
   },
   "cta": {
     "title": "Let's build something incredible?",
-    "button": "Get in touch",
-    "social": "Or find me on",
-    "whatsappMessage": "Hi Caio! I saw your portfolio and I'd like to talk about a project."
+    "social": "Or find me on"
   },
   "footer": {
     "description": "Developer and web designer focused on creating high-end digital experiences.",
@@ -229,7 +229,6 @@
       "other": "Other"
     },
     "submit": "Send on WhatsApp",
-    "incomplete": "Fill in the fields",
     "sent": "We opened WhatsApp with your message. Just hit send!",
     "message": {
       "intro": "Hi Caio! I came from your portfolio and I'd like to talk about a project.",
@@ -238,6 +237,10 @@
       "site": "Current website",
       "service": "Service of interest",
       "challenge": "Biggest challenge"
+    },
+    "errors": {
+      "name": "Tell me your name so I know who I'm talking to.",
+      "service": "Choose the kind of service you're interested in."
     }
   },
   "credentials": {

@@ -9,7 +9,9 @@
     "about": "Sobre",
     "services": "Serviços",
     "process": "Processo",
-    "contact": "Contato"
+    "contact": "Contato",
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu"
   },
   "hero": {
     "role": "Desenvolvedor & Web Designer",
@@ -153,9 +155,7 @@
   },
   "cta": {
     "title": "Vamos construir algo incrível?",
-    "button": "Entrar em contato",
-    "social": "Ou me encontre nas redes",
-    "whatsappMessage": "Olá, Caio! Vi o seu portfólio e gostaria de conversar sobre um projeto."
+    "social": "Ou me encontre nas redes"
   },
   "footer": {
     "description": "Desenvolvedor e web designer focado em criar experiências digitais de alto padrão.",
@@ -229,7 +229,6 @@
       "other": "Outro"
     },
     "submit": "Enviar pelo WhatsApp",
-    "incomplete": "Preencha os campos",
     "sent": "Abrimos o WhatsApp com a sua mensagem. É só enviar!",
     "message": {
       "intro": "Olá, Caio! Vim pelo seu portfólio e gostaria de falar sobre um projeto.",
@@ -238,6 +237,10 @@
       "site": "Site atual",
       "service": "Serviço de interesse",
       "challenge": "Maior desafio"
+    },
+    "errors": {
+      "name": "Diga o seu nome para eu saber com quem falo.",
+      "service": "Escolha o tipo de serviço que te interessa."
     }
   },
   "credentials": {

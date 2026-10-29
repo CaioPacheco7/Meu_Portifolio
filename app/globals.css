@@ -166,6 +166,10 @@
   color: var(--color-fg-muted);
 }
 
+.hero-cta {
+  margin-top: 2.25rem;
+}
+
 .hero-role,
 .hero-desc {
   text-shadow:
@@ -218,48 +222,76 @@
 }
 
 /* layout: portrait phone */
+/* layout: portrait (phones, tablets standing up). The title comes first, the portrait fills the
+   lower part of the screen and its edges dissolve into the page. */
 @container hero (orientation: portrait) {
-  .hero-name {
-    left: 6cqw;
-    bottom: 5cqh;
-    font-size: min(25cqw, 12cqh);
-    line-height: 0.9;
-  }
-  .hero-name-word {
-    display: block;
-  }
   .hero-cover-meta {
-    top: max(12cqh, 92px);
+    top: max(11cqh, 84px);
   }
+
+  /* the name: one line, large, right under the label */
+  .hero-name {
+    top: calc(max(11cqh, 84px) + 1.9rem);
+    bottom: auto;
+    left: 6cqw;
+    font-size: min(17.2cqw, 10.5cqh);
+    line-height: 0.86;
+  }
+
+  /* the role and the button follow the name */
   .hero-cover-copy {
-    top: auto;
-    bottom: 27cqh;
+    top: calc(max(11cqh, 84px) + 1.9rem + min(17.2cqw, 10.5cqh) * 0.86 + 1.1rem);
     right: 6cqw;
     width: auto;
     max-width: none;
   }
   .hero-role {
-    font-size: min(6.4cqw, 3.6cqh);
+    font-size: min(5.8cqw, 3.2cqh);
+    max-width: none;
   }
   .hero-desc {
     display: none;
   }
+  .hero-cta {
+    margin-top: 1.25rem;
+  }
+
+  /* the portrait sits at the bottom; its top, its sides and its foot fade into the page */
+  .hero-photo {
+    /* its height follows the screen width, so the face is framed the same on every phone */
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: min(66cqh, 122cqw);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 14%, #000 86%, transparent 100%);
+  }
+  .hero-photo-fade {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 90%, transparent 100%);
+  }
   .hero-photo-img img {
     object-position: 50% 60%;
   }
-  .hero-photo {
-    top: 4cqh;
-    bottom: 36cqh;
-    left: 0;
-    width: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
   .hero-haze {
-    background: radial-gradient(70% 40% at 50% 30%, rgba(108, 123, 255, 0.17), transparent 100%);
+    background: radial-gradient(
+      75% 40% at 58% 66%,
+      rgba(108, 123, 255, 0.2),
+      rgba(108, 123, 255, 0.06) 60%,
+      transparent 100%
+    );
   }
   .hero-cue {
     display: none;
+  }
+}
+
+/* tall tablets have room for the sentence under the title */
+@container hero (orientation: portrait) and (min-width: 600px) {
+  .hero-desc {
+    display: block;
+    max-width: 22rem;
   }
 }
 
@@ -1009,6 +1041,24 @@
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(180deg, transparent, rgba(var(--bwf-bg-rgb), 0.5) 60%, var(--bwf-bg));
+}
+
+/* fingers need more room than a mouse pointer */
+@media (pointer: coarse) {
+  .bwf-socials {
+    gap: 12px;
+  }
+  .bwf-soc {
+    width: 44px;
+    height: 44px;
+  }
+  .bwf-soc svg {
+    width: 20px;
+    height: 20px;
+  }
+  .bwf-link {
+    padding: 10px 0;
+  }
 }
 
 @container (max-width: 760px) {

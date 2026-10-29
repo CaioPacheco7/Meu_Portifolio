@@ -19,18 +19,35 @@ const EMPTY = {
 type Fields = typeof EMPTY;
 
 const inputClass =
-  "w-full rounded-lg border border-fg/10 bg-bg-surface px-4 py-3 text-sm text-fg outline-none transition-colors placeholder:text-fg-muted/50 focus:border-accent";
+  "w-full rounded-lg border border-fg/10 bg-bg-surface px-4 py-3 text-base text-fg outline-none transition-colors placeholder:text-fg-muted/50 focus:border-accent sm:text-sm";
 
-function Field({ id, label, children }: { id: string; label: string; children: ReactNode }) {
+function Field({
+  id,
+  label,
+  error,
+  children,
+}: {
+  id: string;
+  label: string;
+  error?: string;
+  children: ReactNode;
+}) {
   return (
     <div className="space-y-2">
       <label htmlFor={id} className="block text-xs font-medium leading-snug text-fg-muted">
         {label}
       </label>
       {children}
+      {error && (
+        <p id={`${id}-error`} role="alert" className="text-sm text-red-400">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
+
+const invalidClass = "border-red-400/70 focus:border-red-400";
 
 /**
  * The project brief. There is no server behind it: the answers are written into a
@@ -41,6 +58,8 @@ export function ContactForm() {
   const uid = useId();
   const [fields, setFields] = useState<Fields>(EMPTY);
   const [sent, setSent] = useState(false);
+  // errors only show once someone has tried to send, so an untouched form stays calm
+  const [attempted, setAttempted] = useState(false);
 
   const set =
     (key: keyof Fields) =>
@@ -51,11 +70,22 @@ export function ContactForm() {
     };
 
   // WhatsApp already shows who is writing, so only a name and what they need are required.
-  const valid = fields.name.trim().length >= 2 && fields.service !== "";
+  const nameOk = fields.name.trim().length >= 2;
+  const serviceOk = fields.service !== "";
+  const errors = {
+    name: attempted && !nameOk ? t("errors.name") : undefined,
+    service: attempted && !serviceOk ? t("errors.service") : undefined,
+  };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!valid) return;
+    if (!nameOk || !serviceOk) {
+      setAttempted(true);
+      // take the person straight to what is missing
+      const target = !nameOk ? "name" : "service";
+      document.getElementById(`${uid}-${target}`)?.focus();
+      return;
+    }
 
     const line = (label: string, value: string) => `*${label}:* ${value.trim()}`;
     const text = [
@@ -78,7 +108,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="mx-auto mt-24 grid max-w-5xl gap-12 border-t border-fg/10 pt-20 text-left lg:grid-cols-[5fr_6fr] lg:gap-20">
+    <div className="mx-auto mt-16 grid max-w-5xl gap-10 border-t border-fg/10 pt-14 text-left md:mt-24 md:gap-12 md:pt-20 lg:grid-cols-[5fr_6fr] lg:gap-20">
       <RevealOnScroll>
         <p className="mb-8 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-fg-muted">
           <span className="size-1.5 rounded-full bg-accent" />
@@ -91,16 +121,19 @@ export function ContactForm() {
 
       <RevealOnScroll delay={0.1}>
         <form onSubmit={onSubmit} noValidate className="space-y-5">
-          <Field id={`${uid}-name`} label={t("fields.name.label")}>
+          <Field id={`${uid}-name`} label={t("fields.name.label")} error={errors.name}>
             <input
               id={`${uid}-name`}
               type="text"
               autoComplete="name"
+              autoCapitalize="words"
               required
+              aria-invalid={errors.name ? true : undefined}
+              aria-describedby={errors.name ? `${uid}-name-error` : undefined}
               value={fields.name}
               onChange={set("name")}
               placeholder={t("fields.name.placeholder")}
-              className={inputClass}
+              className={cn(inputClass, errors.name && invalidClass)}
             />
           </Field>
 
@@ -122,6 +155,9 @@ export function ContactForm() {
               type="text"
               inputMode="url"
               autoComplete="url"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck={false}
               value={fields.site}
               onChange={set("site")}
               placeholder={t("fields.site.placeholder")}
@@ -129,17 +165,20 @@ export function ContactForm() {
             />
           </Field>
 
-          <Field id={`${uid}-service`} label={t("fields.service.label")}>
+          <Field id={`${uid}-service`} label={t("fields.service.label")} error={errors.service}>
             <div className="relative">
               <select
                 id={`${uid}-service`}
                 required
+                aria-invalid={errors.service ? true : undefined}
+                aria-describedby={errors.service ? `${uid}-service-error` : undefined}
                 value={fields.service}
                 onChange={set("service")}
                 className={cn(
                   inputClass,
                   "appearance-none pr-10",
                   fields.service === "" && "text-fg-muted/50",
+                  errors.service && invalidClass,
                 )}
               >
                 <option value="" disabled>
@@ -172,15 +211,9 @@ export function ContactForm() {
 
           <button
             type="submit"
-            disabled={!valid}
-            className={cn(
-              "w-full rounded-full px-6 py-4 text-sm font-medium tracking-wide transition-colors",
-              valid
-                ? "bg-fg text-bg hover:bg-accent hover:text-fg"
-                : "cursor-not-allowed bg-bg-elevated text-fg-muted",
-            )}
+            className="min-h-14 w-full rounded-full bg-fg px-6 py-4 text-base font-medium tracking-wide text-bg transition-colors hover:bg-accent hover:text-fg active:bg-accent active:text-fg sm:text-sm"
           >
-            {valid ? t("submit") : t("incomplete")}
+            {t("submit")}
           </button>
 
           <p role="status" aria-live="polite" className="min-h-5 text-sm text-accent">

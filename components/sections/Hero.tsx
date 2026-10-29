@@ -54,7 +54,7 @@ export function Hero() {
         gsap.to("[data-ch]", {
           yPercent: -45,
           opacity: 0,
-          filter: "blur(10px)",
+          ...(window.matchMedia("(pointer: coarse)").matches ? {} : { filter: "blur(10px)" }),
           stagger: 0.03,
           ease: "none",
           scrollTrigger: {
@@ -129,7 +129,7 @@ export function Hero() {
       <div className="hero-cover-copy">
         <p className="hero-fade hero-role">{t("role")}</p>
         <p className="hero-fade hero-desc">{t("description")}</p>
-        <div className="hero-fade mt-9">
+        <div className="hero-fade hero-cta">
           <Button onClick={() => scrollTo("#projetos")}>{t("cta")}</Button>
         </div>
       </div>

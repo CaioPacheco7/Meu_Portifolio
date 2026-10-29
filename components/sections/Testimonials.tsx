@@ -71,6 +71,22 @@ function TestimonialCard({ quote, name, role }: Testimonial) {
   );
 }
 
+/** Small screens: a plain card, so every testimonial can be read at once instead of one at a time. */
+function ListCard({ quote, name, role }: Testimonial) {
+  return (
+    <figure className="rounded-2xl border border-fg/10 bg-bg-surface p-6">
+      <span aria-hidden className="block font-serif text-4xl leading-none text-accent">
+        &ldquo;
+      </span>
+      <blockquote className="mt-1 font-serif text-xl leading-snug text-fg">{quote}</blockquote>
+      <figcaption className="mt-5 border-t border-fg/10 pt-4">
+        <span className="block text-sm text-fg">{name}</span>
+        <span className="block text-xs text-fg-muted">{role}</span>
+      </figcaption>
+    </figure>
+  );
+}
+
 /** Rotates the list so neighbouring columns do not show the same card side by side. */
 function rotate<T>(list: T[], by: number) {
   const n = by % list.length;
@@ -96,7 +112,17 @@ export function Testimonials() {
           <h2 className="text-center font-serif text-4xl sm:text-5xl">{t("title")}</h2>
         </RevealOnScroll>
 
-        <RevealOnScroll className="mx-auto mt-14 max-w-5xl">
+        {/* phones: all of them, one under the other */}
+        <div className="mx-auto mt-10 flex max-w-xl flex-col gap-4 md:hidden">
+          {items.map((item, index) => (
+            <RevealOnScroll key={item.name} delay={index * 0.05}>
+              <ListCard {...item} />
+            </RevealOnScroll>
+          ))}
+        </div>
+
+        {/* tablets and up: the tilted wall of cards */}
+        <RevealOnScroll className="mx-auto mt-14 hidden max-w-5xl md:block">
           <div className="tm-stage">
             <div className="tm-plane">
               {COLUMNS.map((column, index) => (

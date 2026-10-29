@@ -15,14 +15,14 @@ export function FilterTabs<T extends string>({
   onChange,
 }: FilterTabsProps<T>) {
   return (
-    <div className="flex flex-wrap gap-6 border-b border-fg/10 pb-4">
+    <div className="flex flex-wrap gap-x-6 border-b border-fg/10">
       {options.map((option) => (
         <button
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
           className={cn(
-            "relative pb-2 text-sm transition-colors",
+            "relative py-3 text-sm transition-colors",
             value === option.value
               ? "text-fg"
               : "text-fg-muted hover:text-fg",
@@ -32,7 +32,7 @@ export function FilterTabs<T extends string>({
           {value === option.value && (
             <motion.span
               layoutId="filter-underline"
-              className="absolute -bottom-[17px] left-0 right-0 h-px bg-accent"
+              className="absolute -bottom-px left-0 right-0 h-px bg-accent"
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             />
           )}
