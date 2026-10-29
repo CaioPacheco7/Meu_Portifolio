@@ -35,13 +35,13 @@ export function About() {
             {t("eyebrow")}
           </p>
 
-          <RevealText as="h2" className="pb-1 font-serif text-5xl leading-[1.05] sm:text-6xl lg:text-5xl xl:text-7xl">
+          <RevealText as="h2" className="pb-1 font-serif text-[clamp(1.6rem,9.2vw,3rem)] leading-[1.05] max-sm:whitespace-nowrap sm:text-6xl lg:text-5xl xl:text-7xl">
             {t("heading.line1")}
           </RevealText>
           <RevealText
             as="p"
             delay={0.1}
-            className="pb-3 font-serif text-5xl italic leading-[1.05] text-accent sm:text-6xl lg:text-5xl xl:text-7xl"
+            className="pb-3 font-serif text-[clamp(1.6rem,9.2vw,3rem)] italic leading-[1.05] text-accent max-sm:whitespace-nowrap sm:text-6xl lg:text-5xl xl:text-7xl"
           >
             {t("heading.line2")}
           </RevealText>
@@ -57,20 +57,20 @@ export function About() {
         </div>
 
         <RevealOnScroll className="lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
-          <div className="rounded-2xl border border-fg/10 bg-bg-surface p-3 sm:p-4">
-            <div className="relative aspect-[440/422] w-full overflow-hidden rounded-xl bg-bg-elevated">
+          <div className="mx-auto max-w-xl rounded-2xl border border-fg/10 bg-bg-surface p-3 sm:p-4 md:max-w-none md:max-lg:flex md:max-lg:items-stretch md:max-lg:gap-6 lg:mx-0 lg:max-w-none">
+            <div className="relative aspect-[440/422] w-full overflow-hidden rounded-xl bg-bg-elevated md:max-lg:aspect-auto md:max-lg:min-h-[22rem] md:max-lg:w-[44%] md:max-lg:shrink-0">
               <Image
                 src="/images/profile/about.jpg"
                 alt={t("photoAlt")}
                 fill
                 quality={90}
-                sizes="(max-width: 1024px) 100vw, 30rem"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 30rem"
                 className="object-cover"
                 style={{ objectPosition: "50% 40%" }}
               />
             </div>
 
-            <div className="px-2 pb-3 pt-7 sm:px-3">
+            <div className="px-2 pb-3 pt-7 sm:px-3 md:max-lg:flex md:max-lg:flex-col md:max-lg:justify-center md:max-lg:py-4">
               <div className="space-y-4 text-[15px] leading-relaxed text-fg/70">
                 <p>{t("bio.p1")}</p>
                 <p>{t("bio.p2")}</p>

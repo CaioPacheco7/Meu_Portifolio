@@ -3,6 +3,7 @@
 import { useLocale } from "next-intl";
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { ImageZoom } from "@/components/ui/ImageZoom";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -43,8 +44,7 @@ export function ProjectDetail({
   const hasOutcome = Boolean(
     project.results ||
       project.technologies?.length ||
-      project.disciplines?.length ||
-      project.liveUrl,
+      project.disciplines?.length,
   );
 
   return (
@@ -73,7 +73,7 @@ export function ProjectDetail({
           </div>
         </div>
 
-        <RevealOnScroll className="mt-16">
+        <RevealOnScroll className="mt-12">
           <ImageZoom
             src={project.coverImage.src}
             alt={project.title[locale]}
@@ -84,6 +84,15 @@ export function ProjectDetail({
             sizes="100vw"
           />
         </RevealOnScroll>
+
+        {project.liveUrl && (
+          <div className="mt-6">
+            <Button href={project.liveUrl} variant="accent" className="w-full justify-center sm:w-auto">
+              {labels.visitSite}
+              <ArrowUpRight size={18} aria-hidden />
+            </Button>
+          </div>
+        )}
 
         {project.credit && (
           <RevealOnScroll className="mt-10">
@@ -221,9 +230,7 @@ export function ProjectDetail({
               </RevealOnScroll>
             )}
 
-            {(project.technologies?.length ||
-              project.disciplines?.length ||
-              project.liveUrl) && (
+            {(project.technologies?.length || project.disciplines?.length) && (
               <RevealOnScroll delay={0.05}>
                 {project.technologies && project.technologies.length > 0 && (
                   <>
@@ -259,21 +266,6 @@ export function ProjectDetail({
                       ))}
                     </div>
                   </div>
-                )}
-
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={cn(
-                      "inline-flex items-center gap-2 text-sm text-fg transition-colors hover:text-accent",
-                      (project.technologies?.length || project.disciplines?.length) && "mt-8",
-                    )}
-                  >
-                    {labels.visitSite}
-                    <ArrowUpRight size={16} />
-                  </a>
                 )}
               </RevealOnScroll>
             )}

@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Caio Pacheco — Desenvolvedor & Web Designer",
+  title: "Caio Pacheco — Desenvolvedor Front-end",
   description:
     "Desenvolvo experiências digitais que unem estratégia, design e tecnologia para transformar marcas.",
 };

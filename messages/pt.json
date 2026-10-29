@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Caio Pacheco — Desenvolvedor & Web Designer",
+    "title": "Caio Pacheco — Desenvolvedor Front-end",
     "description": "Desenvolvo experiências digitais que unem estratégia, design e tecnologia para transformar marcas."
   },
   "nav": {
@@ -14,7 +14,7 @@
     "menuClose": "Fechar menu"
   },
   "hero": {
-    "role": "Desenvolvedor & Web Designer",
+    "role": "Desenvolvedor Front-end",
     "description": "Desenvolvo experiências digitais que unem estratégia, design e tecnologia para transformar marcas.",
     "cta": "Ver Projetos",
     "scroll": "Scroll",
@@ -103,7 +103,7 @@
     },
     "scene": {
       "hint": "Arraste para girar · Clique para ondular",
-      "ringText": "Caio Pacheco · Desenvolvedor & Web Designer · ",
+      "ringText": "Caio Pacheco · Desenvolvedor Front-end · ",
       "navLabel": "Etapas do processo",
       "frames": {
         "briefing": {
@@ -158,7 +158,7 @@
     "social": "Ou me encontre nas redes"
   },
   "footer": {
-    "description": "Desenvolvedor e web designer focado em criar experiências digitais de alto padrão.",
+    "description": "Desenvolvedor front-end focado em criar experiências digitais de alto padrão.",
     "navigation": "Navegação",
     "connect": "Conecte-se",
     "rights": "Todos os direitos reservados.",

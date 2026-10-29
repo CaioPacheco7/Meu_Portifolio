@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "accent" | "ghost";
   className?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
@@ -28,9 +28,11 @@ export function Button({
     transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const },
     className: cn(
       "inline-flex items-center gap-2 rounded-full px-8 py-4 text-sm font-medium tracking-wide transition-colors",
-      variant === "primary"
-        ? "bg-fg text-bg hover:bg-accent hover:text-fg"
-        : "border border-fg/20 text-fg hover:border-accent hover:text-accent",
+      variant === "primary" && "bg-fg text-bg hover:bg-accent hover:text-fg",
+      // the brand colour: the one that should catch the eye (the mirror of "primary" on hover)
+      variant === "accent" &&
+        "bg-accent text-bg shadow-[0_10px_30px_-10px_rgba(108,123,255,0.7)] hover:bg-fg",
+      variant === "ghost" && "border border-fg/20 text-fg hover:border-accent hover:text-accent",
       className,
     ),
   };

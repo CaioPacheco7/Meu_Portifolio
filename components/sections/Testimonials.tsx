@@ -112,8 +112,8 @@ export function Testimonials() {
           <h2 className="text-center font-serif text-4xl sm:text-5xl">{t("title")}</h2>
         </RevealOnScroll>
 
-        {/* phones: all of them, one under the other */}
-        <div className="mx-auto mt-10 flex max-w-xl flex-col gap-4 md:hidden">
+        {/* people who asked their system for less motion get every testimonial as a plain list instead */}
+        <div className="mx-auto mt-10 hidden max-w-xl flex-col gap-4 motion-reduce:flex">
           {items.map((item, index) => (
             <RevealOnScroll key={item.name} delay={index * 0.05}>
               <ListCard {...item} />
@@ -121,8 +121,8 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* tablets and up: the tilted wall of cards */}
-        <RevealOnScroll className="mx-auto mt-14 hidden max-w-5xl md:block">
+        {/* the tilted wall of cards, scaled to the screen (see .tm-stage) */}
+        <RevealOnScroll className="mx-auto mt-10 max-w-5xl motion-reduce:hidden md:mt-14">
           <div className="tm-stage">
             <div className="tm-plane">
               {COLUMNS.map((column, index) => (
