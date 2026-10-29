@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "title": "Caio Pacheco — Developer & Web Designer",
+    "description": "I build digital experiences that combine strategy, design and technology to transform brands."
+  },
+  "nav": {
+    "brand": "Portfolio Caio",
+    "projects": "Projects",
+    "about": "About",
+    "services": "Services",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Developer & Web Designer",
+    "description": "I build digital experiences that combine strategy, design and technology to transform brands.",
+    "cta": "View Projects",
+    "scroll": "Scroll",
+    "portfolio": "Portfolio",
+    "photoAlt": "Portrait of Caio Pacheco"
+  },
+  "featuredProjects": {
+    "title": "Featured Projects",
+    "viewAll": "View all projects"
+  },
+  "projectsGrid": {
+    "title": "All Projects",
+    "filters": {
+      "all": "All",
+      "sites": "Websites",
+      "landing-pages": "Landing Pages",
+      "ecommerce": "E-commerce",
+      "dashboard": "Dashboards",
+      "aplicativos": "Applications"
+    }
+  },
+  "about": {
+    "eyebrow": "About me",
+    "heading": {
+      "line1": "Ideas that become",
+      "line2": "digital experiences."
+    },
+    "stats": {
+      "graduated": "Graduated from UniFG",
+      "certifications": "Certifications and courses",
+      "projects": "Projects in the portfolio"
+    },
+    "photoAlt": "Portrait of Caio Pacheco",
+    "bio": {
+      "p1": "I'm Caio Pacheco Prates, a systems developer driven by curiosity and the will to turn problems into solutions. I graduated in Systems Analysis and Development from Centro Universitário UniFG in August 2026.",
+      "p2": "I got there balancing work and study, which strengthened my discipline, my sense of responsibility and my drive to grow.",
+      "p3": "At <link>Forja Studio</link>, I build websites, landing pages and digital systems for companies and professionals, combining technology, functionality and attention to detail.",
+      "p4": "I enjoy learning new technologies and working with other people. My goal is to keep growing, take part in challenging projects and build a solid career in technology."
+    },
+    "location": "Licínio de Almeida, BA · Brazil"
+  },
+  "services": {
+    "title": "Services",
+    "items": {
+      "webDesign": {
+        "title": "Web Design",
+        "description": "Creation of modern, responsive interfaces with a focus on aesthetics and usability."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Fast, scalable websites built with the best technologies on the market."
+      },
+      "uxui": {
+        "title": "UX/UI",
+        "description": "Data-driven research and strategy for smarter design decisions."
+      },
+      "consulting": {
+        "title": "Consulting",
+        "description": "Strategic direction for digital products and online presence."
+      }
+    }
+  },
+  "process": {
+    "title": "My Process",
+    "steps": {
+      "briefing": {
+        "title": "Briefing",
+        "description": "Deep understanding of the business and its goals."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "Information architecture and scope definition."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Art direction focused on performance and conversion."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Building the site with clean, performant code."
+      },
+      "delivery": {
+        "title": "Delivery",
+        "description": "Testing, refinement and delivery with follow-up support."
+      }
+    },
+    "scene": {
+      "hint": "Drag to spin · Click to ripple",
+      "ringText": "Caio Pacheco · Developer & Web Designer · ",
+      "navLabel": "Process steps",
+      "frames": {
+        "briefing": {
+          "kicker": "First, listen",
+          "tags": [
+            "Goals",
+            "Audience",
+            "References"
+          ]
+        },
+        "strategy": {
+          "kicker": "Then, think",
+          "tags": [
+            "Architecture",
+            "Scope",
+            "Priorities"
+          ]
+        },
+        "design": {
+          "kicker": "Then, give it form",
+          "tags": [
+            "UI",
+            "UX",
+            "Motion"
+          ]
+        },
+        "development": {
+          "kicker": "Next, build",
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "GSAP",
+            "WebGL"
+          ]
+        },
+        "delivery": {
+          "kicker": "Finally, deliver",
+          "tags": [
+            "Testing",
+            "Refinements",
+            "Follow-up"
+          ]
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Testimonials"
+  },
+  "cta": {
+    "title": "Let's build something incredible?",
+    "button": "Get in touch",
+    "social": "Or find me on",
+    "whatsappMessage": "Hi Caio! I saw your portfolio and I'd like to talk about a project."
+  },
+  "footer": {
+    "description": "Developer and web designer focused on creating high-end digital experiences.",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "workingAt": {
+      "lead": "Currently, a developer at ",
+      "tail": "."
+    }
+  },
+  "project": {
+    "summary": "Summary",
+    "problem": "Problem",
+    "objectives": "Objectives",
+    "solution": "Solution",
+    "process": "Process",
+    "gallery": "Gallery",
+    "results": "Results",
+    "technologies": "Technologies",
+    "nextProject": "Next Project",
+    "visitSite": "Visit site",
+    "backToProjects": "Back to projects",
+    "team": {
+      "badge": "Team project at {studio}",
+      "note": "Built as a team at {studio}. I took part in building it.",
+      "link": "See {studio}’s portfolio"
+    },
+    "disciplines": "Disciplines"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
+  },
+  "contactForm": {
+    "eyebrow": "Contact",
+    "title": "Tell me about your project",
+    "text": "Share a bit about your idea. I'll reply on WhatsApp, no strings attached, and we'll shape the best solution together.",
+    "fields": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "John"
+      },
+      "company": {
+        "label": "Company name (optional)",
+        "placeholder": "John's company"
+      },
+      "site": {
+        "label": "Does your company already have a website? If so, what is the address? (optional)",
+        "placeholder": "Website address"
+      },
+      "service": {
+        "label": "What kind of service are you interested in?",
+        "placeholder": "Select..."
+      },
+      "challenge": {
+        "label": "Besides a new website, what is the biggest challenge you face in your business today? (optional)",
+        "placeholder": "Tell me what needs improving"
+      }
+    },
+    "services": {
+      "site": "Business website",
+      "landing": "Landing page",
+      "store": "Online store or catalogue",
+      "system": "System or dashboard",
+      "app": "App",
+      "redesign": "Redesign of an existing site",
+      "other": "Other"
+    },
+    "submit": "Send on WhatsApp",
+    "incomplete": "Fill in the fields",
+    "sent": "We opened WhatsApp with your message. Just hit send!",
+    "message": {
+      "intro": "Hi Caio! I came from your portfolio and I'd like to talk about a project.",
+      "name": "Name",
+      "company": "Company",
+      "site": "Current website",
+      "service": "Service of interest",
+      "challenge": "Biggest challenge"
+    }
+  },
+  "credentials": {
+    "title": "Education & certifications",
+    "kinds": {
+      "degree": "Technologist degree",
+      "extension": "Extension course",
+      "certificate": "Certificate"
+    },
+    "onRequest": "Original diploma and certificates available on request.",
+    "requestLink": "Ask on WhatsApp",
+    "requestMessage": "Hi Caio! I'd like to see your diploma and certificates."
+  }
+}

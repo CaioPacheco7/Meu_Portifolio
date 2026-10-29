@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local only: drafts and personal photos the site does not use
+/_projetos-removidos/
+/public/images/fotos_minha/

@@ -1,0 +1,254 @@
+{
+  "metadata": {
+    "title": "Caio Pacheco — Desenvolvedor & Web Designer",
+    "description": "Desenvolvo experiências digitais que unem estratégia, design e tecnologia para transformar marcas."
+  },
+  "nav": {
+    "brand": "Portfólio Caio",
+    "projects": "Projetos",
+    "about": "Sobre",
+    "services": "Serviços",
+    "process": "Processo",
+    "contact": "Contato"
+  },
+  "hero": {
+    "role": "Desenvolvedor & Web Designer",
+    "description": "Desenvolvo experiências digitais que unem estratégia, design e tecnologia para transformar marcas.",
+    "cta": "Ver Projetos",
+    "scroll": "Scroll",
+    "portfolio": "Portfólio",
+    "photoAlt": "Retrato de Caio Pacheco"
+  },
+  "featuredProjects": {
+    "title": "Projetos em destaque",
+    "viewAll": "Ver todos os projetos"
+  },
+  "projectsGrid": {
+    "title": "Todos os Projetos",
+    "filters": {
+      "all": "Todos",
+      "sites": "Sites",
+      "landing-pages": "Landing Pages",
+      "ecommerce": "E-commerce",
+      "dashboard": "Dashboard",
+      "aplicativos": "Aplicativos"
+    }
+  },
+  "about": {
+    "eyebrow": "Sobre mim",
+    "heading": {
+      "line1": "Ideias que se tornam",
+      "line2": "experiências digitais."
+    },
+    "stats": {
+      "graduated": "Formado pela UniFG",
+      "certifications": "Certificações e cursos",
+      "projects": "Projetos no portfólio"
+    },
+    "photoAlt": "Retrato de Caio Pacheco",
+    "bio": {
+      "p1": "Sou Caio Pacheco Prates, desenvolvedor de sistemas movido pela curiosidade e pela vontade de transformar problemas em soluções. Me formei em Análise e Desenvolvimento de Sistemas pelo Centro Universitário UniFG, em agosto de 2026.",
+      "p2": "Cheguei lá conciliando trabalho e estudos, o que fortaleceu minha disciplina, minha responsabilidade e minha vontade de crescer.",
+      "p3": "Na <link>Forja Studio</link>, desenvolvo sites, landing pages e sistemas digitais para empresas e profissionais, unindo tecnologia, funcionalidade e atenção aos detalhes.",
+      "p4": "Gosto de aprender tecnologias novas e de trabalhar com outras pessoas. Meu objetivo é seguir evoluindo, participar de projetos desafiadores e construir uma carreira sólida em tecnologia."
+    },
+    "location": "Licínio de Almeida, BA · Brasil"
+  },
+  "services": {
+    "title": "Serviços",
+    "items": {
+      "webDesign": {
+        "title": "Web Design",
+        "description": "Criação de interfaces modernas e responsivas, com foco em estética e usabilidade."
+      },
+      "development": {
+        "title": "Desenvolvimento",
+        "description": "Sites rápidos, escaláveis e construídos com as melhores tecnologias do mercado."
+      },
+      "uxui": {
+        "title": "UX/UI",
+        "description": "Pesquisa e estratégia orientadas a dados para decisões de design mais inteligentes."
+      },
+      "consulting": {
+        "title": "Consultoria",
+        "description": "Direcionamento estratégico para produtos digitais e presença online."
+      }
+    }
+  },
+  "process": {
+    "title": "Meu Processo",
+    "steps": {
+      "briefing": {
+        "title": "Briefing",
+        "description": "Entendimento profundo do negócio e dos objetivos."
+      },
+      "strategy": {
+        "title": "Estratégia",
+        "description": "Arquitetura da informação e definição do escopo."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Direção de arte focada em performance e conversão."
+      },
+      "development": {
+        "title": "Desenvolvimento",
+        "description": "Construção do site com código limpo e performático."
+      },
+      "delivery": {
+        "title": "Entrega",
+        "description": "Testes, ajustes e entrega com acompanhamento."
+      }
+    },
+    "scene": {
+      "hint": "Arraste para girar · Clique para ondular",
+      "ringText": "Caio Pacheco · Desenvolvedor & Web Designer · ",
+      "navLabel": "Etapas do processo",
+      "frames": {
+        "briefing": {
+          "kicker": "Primeiro, ouvir",
+          "tags": [
+            "Objetivos",
+            "Público",
+            "Referências"
+          ]
+        },
+        "strategy": {
+          "kicker": "Depois, pensar",
+          "tags": [
+            "Arquitetura",
+            "Escopo",
+            "Prioridades"
+          ]
+        },
+        "design": {
+          "kicker": "Então, dar forma",
+          "tags": [
+            "UI",
+            "UX",
+            "Motion"
+          ]
+        },
+        "development": {
+          "kicker": "Em seguida, construir",
+          "tags": [
+            "Next.js",
+            "TypeScript",
+            "GSAP",
+            "WebGL"
+          ]
+        },
+        "delivery": {
+          "kicker": "Por fim, entregar",
+          "tags": [
+            "Testes",
+            "Ajustes",
+            "Acompanhamento"
+          ]
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Depoimentos"
+  },
+  "cta": {
+    "title": "Vamos construir algo incrível?",
+    "button": "Entrar em contato",
+    "social": "Ou me encontre nas redes",
+    "whatsappMessage": "Olá, Caio! Vi o seu portfólio e gostaria de conversar sobre um projeto."
+  },
+  "footer": {
+    "description": "Desenvolvedor e web designer focado em criar experiências digitais de alto padrão.",
+    "navigation": "Navegação",
+    "connect": "Conecte-se",
+    "rights": "Todos os direitos reservados.",
+    "workingAt": {
+      "lead": "Atualmente, desenvolvedor na ",
+      "tail": "."
+    }
+  },
+  "project": {
+    "summary": "Resumo",
+    "problem": "Problema",
+    "objectives": "Objetivos",
+    "solution": "Solução",
+    "process": "Processo",
+    "gallery": "Galeria",
+    "results": "Resultados",
+    "technologies": "Tecnologias",
+    "nextProject": "Próximo Projeto",
+    "visitSite": "Visitar site",
+    "backToProjects": "Voltar aos projetos",
+    "team": {
+      "badge": "Em equipe na {studio}",
+      "note": "Projeto desenvolvido em equipe na {studio}. Participei da construção.",
+      "link": "Ver o portfólio da {studio}"
+    },
+    "disciplines": "Disciplinas"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail"
+  },
+  "contactForm": {
+    "eyebrow": "Contato",
+    "title": "Me fale sobre o seu projeto",
+    "text": "Conte um pouco da sua ideia. Eu respondo pelo WhatsApp, sem compromisso, e a gente desenha juntos a melhor solução.",
+    "fields": {
+      "name": {
+        "label": "Seu nome",
+        "placeholder": "João"
+      },
+      "company": {
+        "label": "Nome da empresa (opcional)",
+        "placeholder": "Empresa do João"
+      },
+      "site": {
+        "label": "Sua empresa já possui um site? Se sim, qual o endereço? (opcional)",
+        "placeholder": "Endereço do site"
+      },
+      "service": {
+        "label": "Qual tipo de serviço te interessa?",
+        "placeholder": "Selecione..."
+      },
+      "challenge": {
+        "label": "Além de um site novo, qual o maior desafio que você enfrenta hoje no seu negócio? (opcional)",
+        "placeholder": "Conte o que precisa melhorar"
+      }
+    },
+    "services": {
+      "site": "Site institucional",
+      "landing": "Landing page",
+      "store": "Loja virtual ou catálogo",
+      "system": "Sistema ou dashboard",
+      "app": "Aplicativo",
+      "redesign": "Redesign de um site existente",
+      "other": "Outro"
+    },
+    "submit": "Enviar pelo WhatsApp",
+    "incomplete": "Preencha os campos",
+    "sent": "Abrimos o WhatsApp com a sua mensagem. É só enviar!",
+    "message": {
+      "intro": "Olá, Caio! Vim pelo seu portfólio e gostaria de falar sobre um projeto.",
+      "name": "Nome",
+      "company": "Empresa",
+      "site": "Site atual",
+      "service": "Serviço de interesse",
+      "challenge": "Maior desafio"
+    }
+  },
+  "credentials": {
+    "title": "Formação e certificações",
+    "kinds": {
+      "degree": "Graduação tecnológica",
+      "extension": "Curso de extensão",
+      "certificate": "Certificado"
+    },
+    "onRequest": "Diploma e certificados originais disponíveis sob solicitação.",
+    "requestLink": "Pedir pelo WhatsApp",
+    "requestMessage": "Olá, Caio! Gostaria de ver o seu diploma e os seus certificados."
+  }
+}

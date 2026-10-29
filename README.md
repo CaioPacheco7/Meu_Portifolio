@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caio Pacheco — Portfolio
 
-## Getting Started
+Portfólio pessoal premium, construído com Next.js (App Router), TypeScript, Tailwind CSS, GSAP, Lenis e Framer Motion. i18n completo (PT/EN) via next-intl.
 
-First, run the development server:
+## Rodando localmente
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000/pt](http://localhost:3000/pt) ou [http://localhost:3000/en](http://localhost:3000/en).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/[locale]/` — rotas (home, `/projetos`, `/projetos/[slug]`), com pathnames localizados via next-intl.
+- `components/ui/` — componentes genéricos reutilizáveis.
+- `components/layout/` — navbar, footer, smooth scroll provider.
+- `components/sections/` — uma seção da home por arquivo.
+- `components/ui/BeamFooter.tsx` — rodapé com feixe de luz e o nome gigante, letra por letra (estilos `bwf-*` em `app/globals.css`; conteúdo em `components/layout/Footer.tsx`).
+- `components/sections/Testimonials.tsx` + `components/ui/Marquee.tsx` — mural 3D de depoimentos (estilos `tm-*`); novos depoimentos entram na lista `TESTIMONIALS`, no topo do arquivo.
+- `lib/credentials.ts` — formação e certificados (faixa "Formação e certificações", dentro do "Sobre mim": `components/sections/CredentialsStrip.tsx`). Só dados públicos: curso, instituição, data e carga horária. **Nunca** adicione os PDFs ao projeto: eles trazem CPF, RG e outros números de documento.
+- `lib/projects.ts` — dados dos projetos (bilíngue). Os campos do estudo de caso são opcionais: a página só mostra o que existe.
+  Projetos feitos em equipe levam `credit` (hoje, a Forja Studio): ganham a observação "em equipe" no card e na página, com link para o
+  portfólio da Forja (`FORJA_PORTFOLIO_URL` em `lib/constants.ts`).
+- `messages/{pt,en}.json` — strings de UI.
 
-## Learn More
+## Processo (3D guiado pelo scroll)
 
-To learn more about Next.js, take a look at the following resources:
+A seção "Meu Processo" é um palco `sticky` com ~5 telas de altura: o scroll é a linha do tempo. Um núcleo de metal
+líquido percorre as 5 etapas (briefing, gema, esfera polida, cubo com grade e o "ponto" da marca) enquanto o texto
+muda ao redor. Tudo em WebGL2 puro, sem dependências novas. O hero (primeira tela) é a foto, com o nome grande embaixo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `components/sections/Process.tsx` — DOM, loop de scroll, interação (arrastar, clicar, cursor) e o texto de cada etapa.
+- `lib/process-scene/` — a cena: `geometry` (malhas), `shaders`, `renderer`, `ring-texture` (inscrição do anel),
+  `frames` (keyframes do scroll, em `KEYS`) e `layout` (mede o texto e acha o maior espaço livre para o objeto).
+- Textos: `process.steps` e `process.scene` em `messages/{pt,en}.json`. Scroll por etapa: `SCENE_SCROLL` em `Process.tsx`.
+- `prefers-reduced-motion` desliga rotação ociosa, ponteiro e transformações; a cor de destaque vem de `--color-accent`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build de produção
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
